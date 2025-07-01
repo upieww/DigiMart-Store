@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DigiMart - Store Produk Digital</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+      color: white;
+      text-align: center;
+    }
+    header {
+      padding: 20px;
+    }
+    img.logo {
+      max-width: 200px;
+      margin-bottom: 10px;
+    }
+    h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    .product {
+      background: #1c1c3c;
+      margin: 30px auto;
+      padding: 20px;
+      border-radius: 15px;
+      max-width: 400px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    }
+    .buy-btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #ff007f;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    .buy-btn:hover {
+      background: #ff3399;
+    }
+    .payment-options {
+      display: none;
+      margin-top: 15px;
+    }
+    .payment-options button {
+      margin: 5px;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 8px;
+      background-color: #444;
+      color: white;
+      cursor: pointer;
+    }
+    footer {
+      margin-top: 50px;
+      padding: 10px;
+      font-size: 0.8rem;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img class="logo" src="logo.png" alt="Logo DigiMart" />
+    <h1>Selamat Datang di DigiMart</h1>
+    <p>Toko Digital - Panel Pterodactyl & Nokos Indo</p>
+  </header>
+
+  <section class="product">
+    <h2>Panel Pterodactyl</h2>
+    <p>Pilih kapasitas panel sesuai kebutuhan Anda:</p>
+    <ul>
+      <li>Panel 1GB - 1K</li>
+      <li>Panel 2GB - 2K</li>
+      <li>Panel 3GB - 3K</li>
+      <li>Panel 4GB - 4K</li>
+      <li>Panel 5GB - 5K</li>
+      <li>Panel 6GB - 6K</li>
+      <li>Panel 7GB - 7K</li>
+      <li>Panel 8GB - 8K</li>
+      <li>Panel 9GB - 9K</li>
+      <li>Panel 10GB - 10K</li>
+      <li>Panel Unlimited - 15K</li>
+    </ul>
+    <button class="buy-btn" onclick="togglePayment('Panel Pterodactyl')">Beli Sekarang</button>
+  </section>
+
+  <section class="product">
+    <h2>Nokos Indo</h2>
+    <p>Nomor Kosong Indonesia siap pakai untuk verifikasi atau kebutuhan digital lainnya - <strong>5K</strong></p>
+    <button class="buy-btn" onclick="togglePayment('Nokos Indo')">Beli Sekarang</button>
+  </section>
+
+  <div class="payment-options" id="paymentOptions">
+    <p>Pilih metode pembayaran:</p>
+    <button onclick="sendTo('dana')">DANA</button>
+    <button onclick="sendTo('ovo')">OVO</button>
+    <button onclick="sendTo('gopay')">GoPay</button>
+  </div>
+
+  <footer>
+    &copy; 2025 DigiMart - All rights reserved.
+  </footer>
+
+  <script>
+    let selectedProduct = '';
+
+    function togglePayment(product) {
+      selectedProduct = product;
+      const box = document.getElementById("paymentOptions");
+      box.style.display = "block";
+    }
+
+    function sendTo(method) {
+      const number = {
+        dana: '0895404625552',
+        ovo: '0895404625552',
+        gopay: '0895404625552'
+      }[method];
+
+      const msg = encodeURIComponent(`Halo kak, saya ingin membeli ${selectedProduct}. Saya sudah transfer via ${method.toUpperCase()} ke nomor ${number}. Berikut bukti dan detailnya:`);
+
+      const lanjut = confirm("Kirim bukti via Telegram? (Klik Batal untuk WhatsApp)");
+      if (lanjut) {
+        window.open(`https://t.me/DIGIEMART?start=${msg}`, '_blank');
+      } else {
+        window.open(`https://wa.me/6295404625552?text=${msg}`, '_blank');
+      }
+    }
+  </script>
+</body>
+</html>
