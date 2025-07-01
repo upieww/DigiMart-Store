@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="id">
+<head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Panel - DigiMart</title><link rel="stylesheet" href="style.css" /></head>
+<body><nav><h1>DigiMart</h1><ul><li><a href="index.html">Home</a></li><li><a href="nokos.html">Nokos</a></li></ul></nav>
+<main class="content"><h2>Panel Pterodactyl</h2><div class="product-list">
+<div class="product-card"><h3>Panel 1GB</h3><p>Harga: 1K</p><button onclick="showPayment('Panel 1GB', '1K')">Beli</button></div>
+<div class="product-card"><h3>Panel 2GB</h3><p>Harga: 2K</p><button onclick="showPayment('Panel 2GB', '2K')">Beli</button></div>
+<div class="product-card"><h3>Panel 3GB</h3><p>Harga: 3K</p><button onclick="showPayment('Panel 3GB', '3K')">Beli</button></div>
+<div class="product-card"><h3>Panel 4GB</h3><p>Harga: 4K</p><button onclick="showPayment('Panel 4GB', '4K')">Beli</button></div>
+<div class="product-card"><h3>Panel 5GB</h3><p>Harga: 5K</p><button onclick="showPayment('Panel 5GB', '5K')">Beli</button></div>
+<div class="product-card"><h3>Panel 6GB</h3><p>Harga: 6K</p><button onclick="showPayment('Panel 6GB', '6K')">Beli</button></div>
+<div class="product-card"><h3>Panel 7GB</h3><p>Harga: 7K</p><button onclick="showPayment('Panel 7GB', '7K')">Beli</button></div>
+<div class="product-card"><h3>Panel 8GB</h3><p>Harga: 8K</p><button onclick="showPayment('Panel 8GB', '8K')">Beli</button></div>
+<div class="product-card"><h3>Panel 9GB</h3><p>Harga: 9K</p><button onclick="showPayment('Panel 9GB', '9K')">Beli</button></div>
+<div class="product-card"><h3>Panel 10GB</h3><p>Harga: 10K</p><button onclick="showPayment('Panel 10GB', '10K')">Beli</button></div>
+<div class="product-card"><h3>Panel Unlimited</h3><p>Harga: 15K</p><button onclick="showPayment('Panel Unlimited', '15K')">Beli</button></div>
+</div></main>
+<div id="paymentPopup" class="popup hidden"><div class="popup-content">
+<h3 id="productTitle"></h3><p id="productPrice"></p>
+<p>Pilih metode pembayaran:</p>
+<ul class="pay-list"><li><strong>DANA:</strong> <span onclick="copyText(this)">0895404625552</span></li>
+<li><strong>OVO:</strong> <span onclick="copyText(this)">0895404625552</span></li>
+<li><strong>GoPay:</strong> <span onclick="copyText(this)">0895404625552</span></li></ul>
+<p>Setelah transfer, kirim bukti ke:</p>
+<button onclick="kirim('wa')">WhatsApp</button>
+<button onclick="kirim('tele')">Telegram</button>
+<button onclick="closePopup()">Tutup</button></div></div>
+<script src="script.js"></script></body>
+</html>
