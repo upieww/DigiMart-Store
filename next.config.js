@@ -1,0 +1,1 @@
+module.exports = { i18n: { locales: ['id', 'code'], defaultLocale: 'id' } }
