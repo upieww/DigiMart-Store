@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Produk DigiMart</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Daftar Produk</h1>
+
+  <h2>Panel Pterodactyl</h2>
+  <ul>
+    <li>1GB - Rp1.000</li>
+    <li>... sampai 10GB</li>
+    <li>Unlimited - Rp15.000</li>
+  </ul>
+
+  <h2>NOKOS</h2>
+  <ul>
+    <li>Indo Fresh - Rp5.000</li>
+    <li>Save Indo - Rp5.000</li>
+  </ul>
+
+  <h3>Form Pembelian</h3>
+  <form action="/order" method="POST" enctype="multipart/form-data">
+    <input name="nama" placeholder="Nama kamu" required /><br>
+    <input name="produk" placeholder="Produk" required /><br>
+    <input type="file" name="bukti" required /><br>
+    <button type="submit">Kirim</button>
+  </form>
+</body>
+</html>
